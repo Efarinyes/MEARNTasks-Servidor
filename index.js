@@ -6,7 +6,7 @@ const cors = require('cors');
 
 const app = express();
 // Port de la app
-const PORT = process.env.PORT || 4000;
+const port = process.env.PORT || 4000;
 
 // conectem amb la BBDD
 conectarDB();
@@ -24,6 +24,6 @@ app.use('/api/projectes', require('./routes/projectes'));
 app.use('/api/feines', require('./routes/feines'));
 
 // arrenquem servidor
-app.listen(PORT, () => {
-    console.log(`Servidor corrent pel port ${PORT}`);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Servidor corrent pel port ${port}`);
 });
